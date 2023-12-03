@@ -1,6 +1,6 @@
 import sys
 
-
+# https://adventofcode.com/2023/day/2
 if __name__ == "__main__":
     argc = len(sys.argv)
     if argc != 2:

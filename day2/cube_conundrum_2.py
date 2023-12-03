@@ -2,6 +2,7 @@ import sys
 from functools import reduce
 from operator import mul
 
+# https://adventofcode.com/2023/day/2#part2
 
 if __name__ == "__main__":
     argc = len(sys.argv)

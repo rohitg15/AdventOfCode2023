@@ -2,8 +2,6 @@ from curses.ascii import isdigit
 import sys
 
 # https://adventofcode.com/2023/day/1#part2
-
-
 def get_first_digit(line: str, l2r: bool) -> chr:
 
     digit_map = {
