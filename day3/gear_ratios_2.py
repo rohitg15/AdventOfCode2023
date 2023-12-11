@@ -5,18 +5,25 @@ from typing import List, Tuple
 
 # https://adventofcode.com/2023/day/3#part2
 
-
-
 def is_adj_gear(lines: List[str], row: int, cbegin: int, cend: int) -> Tuple[int, int]:
     """
-        returns True if there is an adjacent cell with a symbol
+        returns True if there is an adjacent cell with a gear
         returns False otherwise
     """
     m = len(lines)
     n = len(lines[row])
 
     # index to check all adjacent cells including diagonals
-    dirs = ((-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1))
+    dirs = (
+        (-1, -1),
+        (-1, 0), 
+        (-1, 1), 
+        (0, -1), 
+        (0, 1), 
+        (1, -1), 
+        (1, 0), 
+        (1, 1)
+    )
     for col in range(cbegin, cend):
         for dir in dirs:
             r = row + dir[0]
@@ -48,11 +55,11 @@ if __name__ == "__main__":
     res = 0
     gears = {}
     for i, line in enumerate(lines):
-        
         # check every line for a match against integer patterns
         for digit_match in re.finditer(r'\d+', line):
             begin, end = digit_match.start(), digit_match.end()
             r, c = is_adj_gear(lines, i, begin, end)
+            
             # add numbers to gears, keyed by gear position
             if r is not None and c is not None:
                 key = f'{r}#{c}'

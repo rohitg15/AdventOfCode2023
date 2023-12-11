@@ -14,7 +14,16 @@ def is_adj_symbol(lines: List[str], row: int, cbegin: int, cend: int ) -> bool:
     n = len(lines[row])
 
     # index to check all adjacent cells including diagonals
-    dirs = ((-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1))
+    dirs = (
+        (-1, -1), 
+        (-1, 0), 
+        (-1, 1), 
+        (0, -1), 
+        (0, 1), 
+        (1, -1), 
+        (1, 0), 
+        (1, 1)
+    )
     for col in range(cbegin, cend):
         for dir in dirs:
             r = row + dir[0]
@@ -42,7 +51,6 @@ if __name__ == "__main__":
 
     res = 0
     for i, line in enumerate(lines):
-        
         # check every line for a match against integer patterns
         for digit_match in re.finditer(r'\d+', line):
             begin, end = digit_match.start(), digit_match.end()
