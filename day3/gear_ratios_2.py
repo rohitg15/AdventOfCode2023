@@ -1,4 +1,3 @@
-from curses.ascii import isdigit
 import re
 import sys
 from typing import List, Tuple
